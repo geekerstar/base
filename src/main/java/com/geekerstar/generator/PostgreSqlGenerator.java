@@ -106,7 +106,7 @@ public class PostgreSqlGenerator {
         strategy.setEntityLombokModel(true);
 //        strategy.setSuperControllerClass("com.geekerstar.generator.common.BaseController");
         //要设置生成哪些表 如果不设置就是生成所有的表
-        strategy.setInclude(scanner("表名，多个表用英文逗号分割，注意不要有空格(注意生成之前在pom.xml里将MP版本改为3.3.0，生成完再改回来)").split(","));
+        strategy.setInclude(scanner("表名，多个表用英文逗号分割").split(","));
 //        strategy.setInclude(scanner("表名"));
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
