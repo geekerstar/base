@@ -20,44 +20,27 @@ import java.util.Scanner;
  * description: mysql 代码生成器
  */
 public class MysqlGenerator {
-    /**
-     * <p>
-     * 读取控制台内容
-     * </p>
-     */
-    public static String scanner(String tip) {
-        Scanner scanner = new Scanner(System.in);
-        StringBuilder help = new StringBuilder();
-        help.append("请输入" + tip + "：");
-        System.out.println(help.toString());
-        if (scanner.hasNext()) {
-            String ipt = scanner.next();
-            if (StringUtils.isNotEmpty(ipt)) {
-                return ipt;
-            }
-        }
-        throw new MybatisPlusException("请输入正确的" + tip + "！");
-    }
 
     /**
-     * RUN THIS
+     * 执行该方法，输入数据库表名后按回车键
      */
     public static void main(String[] args) {
+
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/springboot-mybatis-plus-generator/src/main/java");
+        gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("Geekerstar");
         gc.setOpen(false);
+        gc.setSwagger2(true);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/mybatis_plus?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8");
-        // dsc.setSchemaName("public");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/base?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
@@ -65,8 +48,14 @@ public class MysqlGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.geekerstar.generator");
+//        pc.setModuleName(scanner("模块名"));
+        pc.setParent("com.geekerstar");
+        pc.setController("auto");
+        pc.setService("auto");
+        pc.setServiceImpl("auto");
+        pc.setEntity("auto");
+        pc.setMapper("auto");
+        pc.setXml("auto");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -81,7 +70,9 @@ public class MysqlGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/springboot-mybatis-plus-generator/src/main/resources/mapper/" + pc.getModuleName()
+//                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
+//                        + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                return projectPath + "/src/main/resources/mapper/"
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -96,13 +87,31 @@ public class MysqlGenerator {
 //        strategy.setSuperEntityClass("com.geekerstar.generator.common.BaseEntity");
         strategy.setEntityLombokModel(true);
 //        strategy.setSuperControllerClass("com.geekerstar.generator.common.BaseController");
-        strategy.setInclude(scanner("表名"));
+        //要设置生成哪些表 如果不设置就是生成所有的表
+        strategy.setInclude(scanner("表名，多个表用英文逗号分割)").split(","));
+//        strategy.setInclude(scanner("表名"));
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
+        strategy.setRestControllerStyle(true);
         mpg.setStrategy(strategy);
         // 选择 freemarker 引擎需要指定如下加，注意 pom 依赖必须有！
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
+    }
+
+    /**
+     * 读取控制台内容
+     */
+    public static String scanner(String tip) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入" + tip + "：");
+        if (scanner.hasNext()) {
+            String ipt = scanner.next();
+            if (StringUtils.isNotBlank(ipt)) {
+                return ipt;
+            }
+        }
+        throw new MybatisPlusException("请输入正确的" + tip + "！");
     }
 }
