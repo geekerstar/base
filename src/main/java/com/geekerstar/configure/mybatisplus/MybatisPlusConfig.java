@@ -1,4 +1,4 @@
-package com.geekerstar.configure;
+package com.geekerstar.configure.mybatisplus;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;

@@ -7,7 +7,7 @@ server:
     context-path: /
 spring:
   profiles:
-    active: dev
+    active: @activatedProperties@
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -61,6 +61,14 @@ spring:
           #allow:
           # 添加IP黑名单，当白名单和黑名单重复时，黑名单优先级更高
           #deny:
+# 配置swagger
+swagger:
+  version: 1.0
+  groupName: 基础项目
+  title: 基础项目
+  description: 接口文档
+  # 扫描的包路径
+  basePackage: com.geekerstar.controller
 
 #########################################################################
 ####                     mybatis plus 配置                            ####
