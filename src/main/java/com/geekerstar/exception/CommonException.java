@@ -7,20 +7,15 @@ package com.geekerstar.exception;
  */
 public class CommonException {
 
-    public static final BusinessException TEST_EXCEPTION = new BusinessException("C00001", "这个是示例，抛出具体信息写在这里");
-
-    public static final BusinessException PARAMS_IS_MISSING = new BusinessException("C60005", "缺少参数!");
-
-    public static final BusinessException PARAMS_IS_NULL = new BusinessException("C00001", "[%s]不能为空!");
-    public static final BusinessException INFO_IS_NULL = new BusinessException("C60004", "信息不存在!");
-
-    public static final BusinessException ABSENCE_DEPARTMENT = new BusinessException("C60006","部门表不存在该部门");
-
-    public static final BusinessException LOGIN_FAIL = new BusinessException("C60006","用户名或密码错误！");
-    public static final BusinessException LOGIN_NOT_EMPTY = new BusinessException("C60006","用户名或密码不能为空！");
-
-    public static final BusinessException AJBH_JQBH_ERROR = new BusinessException("C60006","案件编号或警情编号有误！");
-
+    public static final BusinessException UNKNOWN_EXCEPTION = new BusinessException("100", "未知异常");
+    public static final BusinessException FORMAT_ERROR = new BusinessException("101", "参数格式错误");
+    public static final BusinessException TIME_OUT = new BusinessException("102", "超时");
+    public static final BusinessException ADD_ERROR = new BusinessException("103", "添加失败");
+    public static final BusinessException UPDATE_ERROR = new BusinessException("104", "更新失败");
+    public static final BusinessException DELETE_ERROR = new BusinessException("105", "删除失败");
+    public static final BusinessException GET_ERROR = new BusinessException("106", "查找失败");
+    public static final BusinessException ARGUMENT_TYPE_MISMATCH = new BusinessException("107", "参数类型不匹配");
+    public static final BusinessException REQ_METHOD_NOT_SUPPORT = new BusinessException("110", "请求方式不支持");
 
 
 }

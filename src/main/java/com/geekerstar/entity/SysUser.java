@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="SysUser对象", description="用户表")
+@ApiModel(value = "SysUser对象", description = "用户表")
 public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
