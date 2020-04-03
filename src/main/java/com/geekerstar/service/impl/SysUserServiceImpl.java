@@ -21,6 +21,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public SysUser getUser(String username) {
-        return sysUserMapper.getUser(username);
+        SysUser sysUser = new SysUser();
+        sysUser = sysUserMapper.getUser(username);
+        return sysUser;
     }
 }
