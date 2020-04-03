@@ -1,6 +1,6 @@
 package com.geekerstar.common;
 
-import com.geekerstar.exception.BusinessException;
+import com.geekerstar.exception.ExceptionEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -48,7 +48,7 @@ public class Response<T> implements Serializable {
         return newResponse(FAILED, code, message, null);
     }
 
-    public static <T> Response<T> error(BusinessException e) {
+    public static <T> Response<T> error(ExceptionEntity e) {
         return newResponse(FAILED, e.getCode(), e.getMessage(), null);
     }
 

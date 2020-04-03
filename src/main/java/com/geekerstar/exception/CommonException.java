@@ -7,15 +7,15 @@ package com.geekerstar.exception;
  */
 public class CommonException {
 
-    public static final BusinessException UNKNOWN_EXCEPTION = new BusinessException("100", "未知异常");
-    public static final BusinessException FORMAT_ERROR = new BusinessException("101", "参数格式错误");
-    public static final BusinessException TIME_OUT = new BusinessException("102", "超时");
-    public static final BusinessException ADD_ERROR = new BusinessException("103", "添加失败");
-    public static final BusinessException UPDATE_ERROR = new BusinessException("104", "更新失败");
-    public static final BusinessException DELETE_ERROR = new BusinessException("105", "删除失败");
-    public static final BusinessException GET_ERROR = new BusinessException("106", "查找失败");
-    public static final BusinessException ARGUMENT_TYPE_MISMATCH = new BusinessException("107", "参数类型不匹配");
-    public static final BusinessException REQ_METHOD_NOT_SUPPORT = new BusinessException("110", "请求方式不支持");
+    public static final ExceptionEntity UNKNOWN_EXCEPTION = new ExceptionEntity("100", "未知异常");
+    public static final ExceptionEntity FORMAT_ERROR = new ExceptionEntity("101", "参数格式错误");
+    public static final ExceptionEntity TIME_OUT = new ExceptionEntity("102", "超时");
+    public static final ExceptionEntity ADD_ERROR = new ExceptionEntity("103", "添加失败");
+    public static final ExceptionEntity UPDATE_ERROR = new ExceptionEntity("104", "更新失败");
+    public static final ExceptionEntity DELETE_ERROR = new ExceptionEntity("105", "删除失败");
+    public static final ExceptionEntity GET_ERROR = new ExceptionEntity("106", "查找失败");
+    public static final ExceptionEntity ARGUMENT_TYPE_MISMATCH = new ExceptionEntity("107", "参数类型不匹配");
+    public static final ExceptionEntity REQ_METHOD_NOT_SUPPORT = new ExceptionEntity("110", "请求方式不支持");
 
 
 }

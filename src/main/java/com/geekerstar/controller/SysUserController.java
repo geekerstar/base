@@ -4,7 +4,7 @@ package com.geekerstar.controller;
 import com.geekerstar.annotation.Weblog;
 import com.geekerstar.common.Response;
 import com.geekerstar.entity.SysUser;
-import com.geekerstar.exception.BusinessException;
+import com.geekerstar.exception.ExceptionEntity;
 import com.geekerstar.service.ISysUserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -41,7 +41,7 @@ public class SysUserController {
         try {
             result = iSysUserService.getUser(username);
         } catch (Exception e) {
-            return Response.error((BusinessException) e);
+            return Response.error((ExceptionEntity) e);
         }
         return Response.success(result);
     }

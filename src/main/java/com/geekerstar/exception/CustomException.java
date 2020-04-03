@@ -7,6 +7,6 @@ package com.geekerstar.exception;
  */
 public class CustomException extends Throwable {
 
-    public static final BusinessException XXXXXXXX = new BusinessException("C10000", "XXX");
+    public static final ExceptionEntity XXXXXXXX = new ExceptionEntity("C10000", "XXX");
 
 }
