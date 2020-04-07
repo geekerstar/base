@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
 //    @ExceptionHandler(value = CustomException.class)
 //    public <T> Response<T> processException(CustomException e) {
 //        log.error("位置:{} -> 错误信息:{}", e.getCause() ,e.getLocalizedMessage());
-//        return Response.error(resultEnum.getCode().toString(),resultEnum.getMsg());
+//        return Response.error(CustomException.XXXXXXXX.getCode(),CustomException.XXXXXXXX.getMessage());
 //    }
 
     /**
