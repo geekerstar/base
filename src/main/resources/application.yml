@@ -75,7 +75,7 @@ swagger:
 #########################################################################
 mybatis-plus:
   # 实体类扫描路径
-  type-aliases-package: com.hantu.entity
+  type-aliases-package: com.hantu.domain.entity
   # xml 扫描路径
   mapper-locations: classpath:mapper/**/*.xml
   configuration:
