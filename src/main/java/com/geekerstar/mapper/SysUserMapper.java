@@ -1,7 +1,7 @@
 package com.geekerstar.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.geekerstar.entity.SysUser;
+import com.geekerstar.domain.entity.SysUser;
 import org.springframework.stereotype.Repository;
 
 /**

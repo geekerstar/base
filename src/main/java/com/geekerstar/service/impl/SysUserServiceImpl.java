@@ -1,7 +1,7 @@
 package com.geekerstar.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.geekerstar.entity.SysUser;
+import com.geekerstar.domain.entity.SysUser;
 import com.geekerstar.mapper.SysUserMapper;
 import com.geekerstar.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;

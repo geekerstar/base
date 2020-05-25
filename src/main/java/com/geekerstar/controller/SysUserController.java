@@ -3,7 +3,7 @@ package com.geekerstar.controller;
 
 import com.geekerstar.annotation.Weblog;
 import com.geekerstar.common.Response;
-import com.geekerstar.entity.SysUser;
+import com.geekerstar.domain.entity.SysUser;
 import com.geekerstar.exception.ExceptionEntity;
 import com.geekerstar.service.ISysUserService;
 import io.swagger.annotations.ApiImplicitParam;

@@ -1,7 +1,7 @@
 package com.geekerstar.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.geekerstar.entity.SysUser;
+import com.geekerstar.domain.entity.SysUser;
 import org.springframework.stereotype.Service;
 
 /**

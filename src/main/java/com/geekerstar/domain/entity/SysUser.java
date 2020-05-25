@@ -1,4 +1,4 @@
-package com.geekerstar.entity;
+package com.geekerstar.domain.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
